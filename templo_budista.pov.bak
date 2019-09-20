@@ -1,0 +1,104 @@
+#include "colors.inc"
+   
+camera{
+    location <0,0,-50>
+    look_at <0,0,0>
+}   
+   
+light_source{
+    <50,50,-100>
+    White
+}
+sky_sphere{
+    pigment{
+        gradient y
+        color_map{
+            [0 color White]
+            [1 color Blue]    
+        }
+        translate <0,-.5,0>
+    }
+}   
+ 
+
+/*
+Paredes
+*/
+box{
+    <-15,-10,0>,<15,10,50> 
+    finish { ambient .4 } 
+    pigment {White}
+}
+
+/*
+Piso entre andares
+*/ 
+box{
+    <22,1,0>, <-22,-1,-1>  
+    pigment {White}
+    finish { ambient .4 }
+}
+
+/*
+Barras Vermelhas
+*/               
+box{
+    <-22,-10,0>,<-21,10,-1.5>
+    pigment {Red}
+}
+box{
+    <-13.2,-10,0>,<-12.2,10,-1.5>
+    pigment {Red}
+}
+box{
+    <-4.4,-10,0>,<-3.4,10,-1.5>
+    pigment {Red}
+}
+box{
+    <4.4,-10,0>,<5.4,10,-1.5>
+    pigment {Red}
+}
+box{
+    <13.2,-10,0>,<12.2,10,-1.5>
+    pigment {Red}
+}
+box{
+    <22,-10,0>,<21,10,-1.5>
+    pigment {Red}
+}
+/*polygon{  
+    4,<-22,-10,-1>, <-21,-10,-1>, <-21,10,-1>, <-22,10,-1>
+    
+    pigment {Red}
+    
+}
+polygon{  
+    4,<22,-10,-1>, <21,-10,-1>, <21,10,-1>, <22,10,-1>
+    
+    pigment {Red}
+    
+}
+polygon{  
+    4,<12,-10,-1>, <13,-10,-1>, <13,10,-1>, <12,10,-1>
+    
+    pigment {Red}
+    
+}
+polygon{  
+    4,<4,-10,-1>, <5,-10,-1>, <5,10,-1>, <4,10,-1>
+    
+    pigment {Red}
+    
+}
+polygon{  
+    4,<-4,-10,-1>, <-5,-10,-1>, <-5,10,-1>, <-4,10,-1>
+    
+    pigment {Red}
+    
+}
+polygon{  
+    4,<-12,-10,-1>, <-13,-10,-1>, <-13,10,-1>, <-12,10,-1>
+    
+    pigment {Red}
+    
+}  */
