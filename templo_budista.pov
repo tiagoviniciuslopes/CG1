@@ -2,16 +2,16 @@
 #include "textures"
    
 camera{
-    location <0,0,-60>
+    //location <0,0,-60>
     //location <80,0,40>
-    //location <-80,0,40>
+    location <-80,0,40>
     //location <0,200,90>
     //location <0,0,150>
     look_at <0,0,40>
 }   
    
 light_source{
-    <50,50,-100>
+    <-50,50,-100>
     White
 }
 sky_sphere{
@@ -230,6 +230,82 @@ union {
             translate<0,11.5,-1.5>
         }
      #end
+     #for(C,-21,20,8.6) 
+        difference{
+        
+            box {
+                <C,-10,-5.5>,<C+7.6,-7,-7>
+                pigment {White}
+                finish { ambient .4 } 
+            }
+            
+            box{
+                <C-1,-10,-4.5>,<C+8.6,-9.75,-8>
+                pigment {White}
+                finish { ambient .4 }             
+            
+            }
+            
+            box{
+                <C-1,-9.5,-4.5>,<C+8.6,-9.25,-8>
+                pigment {White}
+                finish { ambient .4 }             
+            
+            }
+            box{
+                <C-1,-7.5,-4.5>,<C+8.6,-7.25,-8>
+                pigment {White}
+                finish { ambient .4 }             
+            
+            }
+        
+        }
+        box{
+           <C+3.5,-10,-5.5><C+4.4,-6.5,-7>
+           pigment {White}
+           finish { ambient .4 } 
+        }
+        box{
+           <C+0.5,-10,-5.5><C+1.4,-6.5,-7>
+           pigment {White}
+           finish { ambient .4 } 
+        }
+        box{
+           <C+6.5,-10,-5.5><C+7.4,-6.5,-7>
+           pigment {White}
+           finish { ambient .4 } 
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <C+3.5,-7>,<C+4.4,-7>,<C+3.95,-5.5>,<C+3.5,-7>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<-90,0,0>
+            translate<-3,0.5,-1.5>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <C+0.5,-7>,<C+1.4,-7>,<C+0.95,-5.5>,<C+0.5,-7>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<-90,0,0>
+            translate<3,0.5,-1.5>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <C+6.5,-7>,<C+7.4,-7>,<C+6.95,-5.5>,<C+6.5,-7>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<-90,0,0>
+            translate<0,0.5,-1.5>
+        }
+     #end
      
      
      /*
@@ -309,6 +385,82 @@ union {
             finish { ambient .4 }
             rotate<90,0,0>
             translate<-3,61.5,51.5>
+        }
+     #end
+     #for(C,-21,20,8.6) 
+        difference{
+        
+            box {
+                <C,-10,55.5>,<C+7.6,-7,57>
+                pigment{White}
+                finish { ambient .4 } 
+            }
+            
+            box{
+                <C-1,-10,54.5>,<C+8.6,-9.75,58>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+            
+            box{
+                <C-1,-9.5,54.5>,<C+8.6,-9.25,58>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+            box{
+                <C-1,-7.5,54.5>,<C+8.6,-7.25,58>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+        
+        }
+        box{
+           <C+3.5,-10,55.5><C+4.4,-6.5,57>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        box{
+           <C+0.5,-10,55.5><C+1.4,-6.5,57>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        box{
+           <C+6.5,-10,55.5><C+7.4,-6.5,57>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <C+3.5,57>,<C+4.4,57>,<C+3.95,55.5>,<C+3.5,57>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<90,0,0>
+            translate<-3,50.5,51.5>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <C+0.5,57>,<C+1.4,57>,<C+0.95,55.5>,<C+0.5,57>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<90,0,0>
+            translate<6,50.5,51.5>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <C+6.5,57>,<C+7.4,57>,<C+6.95,55.5>,<C+6.5,57>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<90,0,0>
+            translate<-3,50.5,51.5>
         }
      #end
      
@@ -393,6 +545,83 @@ union {
             translate<16.5,26.5,-0>
         }
      #end
+     #for(C,-6,54.44,8.92) 
+        difference{
+        
+            box {
+                <22,-10,C>,<21.6,-7,C+8>
+                pigment{White}
+                finish { ambient .4 } 
+            }
+            
+            box{
+                <23,-10,C-1>,<20.6,-9.75,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+            
+            box{
+                <23,-9.5,C-1>,<20.6,-9.25,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            } 
+            
+            box{
+                <23,-7.5,C-1>,<20.6,-7.25,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+        
+        }
+        box{
+           <22,-10,C+4.9><21.6,-6.5,C+4>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        box{
+           <22,-10,C+1.9><21.6,-6.5,C+1>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        box{
+           <22,-10,C+7.9><21.6,-6.5,C+7>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <22,C+4.9>,<22,C+4>,<21.6,C+4.45>,<22,C+4.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,-90>
+            translate<16.5,15.5,-0>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <22,C+1.9>,<22,C+1>,<21.6,C+1.45>,<22,C+1.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,-90>
+            translate<16.5,15.5,-0>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <22,C+7.9>,<22,C+7>,<21.6,C+7.45>,<22,C+7.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,-90>
+            translate<16.5,15.5,-0>
+        }
+     #end
      
      /*
      Cerca - lado -x
@@ -473,6 +702,160 @@ union {
             finish { ambient .4 }
             rotate<0,0,90>
             translate<-16.5,26.5,0>
+        }
+     #end
+     #for(C,-6,11.84,8.92) 
+        difference{
+        
+            box {
+                <-22,-10,C>,<-21.6,-7,C+8>
+                pigment{White}
+                finish { ambient .4 } 
+            }
+            
+            box{
+                <-23,-10,C-1>,<-20.6,-9.75,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+            
+            box{
+                <-23,-9.5,C-1>,<-20.6,-9.25,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            } 
+            
+            box{
+                <-23,-7.5,C-1>,<-20.6,-7.25,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+        
+        }
+        box{
+           <-22,-10,C+4.9><-21.6,-6.5,C+4>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        box{             
+           <-22,-10,C+1.9><-21.6,-6.5,C+1>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        box{
+           <-22,-10,C+7.9><-21.6,-6.5,C+7>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <-22,C+4.9>,<-22,C+4>,<-21.6,C+4.45>,<-22,C+4.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,90>
+            translate<-16.5,15.5,0>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <-22,C+1.9>,<-22,C+1>,<-21.6,C+1.45>,<-22,C+1.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,90>
+            translate<-16.5,15.5,0>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <-22,C+7.9>,<-22,C+7>,<-21.6,C+7.45>,<-22,C+7.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,90>
+            translate<-16.5,15.5,0>
+        }
+     #end
+     #for(C,29.68,54.44,8.92) 
+        difference{
+        
+            box {
+                <-22,-10,C>,<-21.6,-7,C+8>
+                pigment{White}
+                finish { ambient .4 } 
+            }
+            
+            box{
+                <-23,-10,C-1>,<-20.6,-9.75,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+            
+            box{
+                <-23,-9.5,C-1>,<-20.6,-9.25,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            } 
+            
+            box{
+                <-23,-7.5,C-1>,<-20.6,-7.25,C+9>
+                pigment{White}
+                finish { ambient .4 }             
+            
+            }
+        
+        }
+        box{
+           <-22,-10,C+4.9><-21.6,-6.5,C+4>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        box{             
+           <-22,-10,C+1.9><-21.6,-6.5,C+1>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        box{
+           <-22,-10,C+7.9><-21.6,-6.5,C+7>
+           pigment{White}
+           finish { ambient .4 } 
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <-22,C+4.9>,<-22,C+4>,<-21.6,C+4.45>,<-22,C+4.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,90>
+            translate<-16.5,15.5,0>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <-22,C+1.9>,<-22,C+1>,<-21.6,C+1.45>,<-22,C+1.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,90>
+            translate<-16.5,15.5,0>
+        }
+        prism{
+            4,
+            5.5,
+            4,
+            <-22,C+7.9>,<-22,C+7>,<-21.6,C+7.45>,<-22,C+7.9>
+            pigment{White}
+            finish { ambient .4 }
+            rotate<0,0,90>
+            translate<-16.5,15.5,0>
         }
      #end
     
