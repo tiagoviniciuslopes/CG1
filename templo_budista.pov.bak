@@ -2,9 +2,9 @@
 #include "textures"
    
 camera{
-    //location <0,0,-60>
+    location <0,0,-60>
     //location <80,0,40>
-    location <-80,0,40>
+    //location <-80,0,40>
     //location <0,200,90>
     //location <0,0,150>
     look_at <0,0,40>
@@ -65,12 +65,94 @@ union {
     /*
     Paredes
     */
-    box{
-        <-15,-10,0>,<15,10,50> 
-        finish { ambient .4 } 
-        pigment {White}
+    difference{
+        box{
+            <-15,-10,0>,<15,10,50> 
+            finish { ambient .4 } 
+            pigment {White}
+        }
+        box{
+            <-14.9,-9.9,0.5>,<14.9,9.9,49.9> 
+            finish { ambient .4 } 
+            pigment {Black}
+        }                        
+        
+        //buraco da janela - frente
+        #for(B, -11.4, 5.8, 8.6)
+            box{
+                <B,1.2,0>,<B+5.6,6,-0.5>
+                texture{ pigment{ color Black}
+                   finish { ambient 0.9 phong 0.5}
+                } // end of texture
+            }
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,6>
+                pigment{ color Black transmit 0.5}
+            }
+        #end
+        
+        #for(B, -11.4, 5.8, 8.6)
+            box{
+                <B,-9.8,0>,<B+5.6,-4,-0.5>
+                texture{ pigment{ color Black}
+                   finish { ambient 0.9 phong 0.5}
+                } // end of texture
+            }
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,-4>
+                pigment{ color Black transmit 0.5}
+            }
+        #end
+        
+        
     }
     
+    //vidros - frente
+    #for(B, -11.4, 5.8, 8.6)
+        difference{
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,6>
+                pigment{ color Black }
+                texture{Glass3 }
+            } 
+            box{
+                <B,1.2,10>,<B+5.6,6,-10.5>
+                pigment{ color Black }
+                
+            }
+        }
+        box{
+            <B,1.2,0>,<B+5.6,6,-0.5>
+            texture{Glass3 }   
+        }
+        
+        
+        
+    #end
+    #for(B, -11.4, 5.8, 8.6)
+        difference{
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,-4>
+                pigment{ color Black }
+                texture{Glass3 }
+            }
+            box{
+                <B,-9.8,10>,<B+5.6,-4,-10.5>
+                pigment{ color Black }
+            }
+        }
+        
+         
+        box{
+            <B,-9.8,0>,<B+5.6,-4,-0.5>
+            texture{Glass3 }
+        }
+        
+    #end
+    /*sphere{ 0, 1 scale<2.8,1.75,0>
+        translate <-8.6,6>
+        pigment{ color Green transmit 0.5}
+    }*/
     
     /*
     Barras Vermelhas - frente
@@ -82,7 +164,9 @@ union {
                 pigment {Red}
             }
     
-    #end     
+    #end
+    
+         
                      
     /*
     Barras Vermelhas - trás
@@ -515,7 +599,7 @@ union {
            finish { ambient .4 } 
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <22,C+4.9>,<22,C+4>,<21.6,C+4.45>,<22,C+4.9>
@@ -525,7 +609,7 @@ union {
             translate<16.5,26.5,-0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <22,C+1.9>,<22,C+1>,<21.6,C+1.45>,<22,C+1.9>
@@ -535,7 +619,7 @@ union {
             translate<16.5,26.5,-0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <22,C+7.9>,<22,C+7>,<21.6,C+7.45>,<22,C+7.9>
@@ -592,7 +676,7 @@ union {
            finish { ambient .4 } 
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <22,C+4.9>,<22,C+4>,<21.6,C+4.45>,<22,C+4.9>
@@ -602,7 +686,7 @@ union {
             translate<16.5,15.5,-0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <22,C+1.9>,<22,C+1>,<21.6,C+1.45>,<22,C+1.9>
@@ -612,7 +696,7 @@ union {
             translate<16.5,15.5,-0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <22,C+7.9>,<22,C+7>,<21.6,C+7.45>,<22,C+7.9>
@@ -674,7 +758,7 @@ union {
            finish { ambient .4 } 
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+4.9>,<-22,C+4>,<-21.6,C+4.45>,<-22,C+4.9>
@@ -684,7 +768,7 @@ union {
             translate<-16.5,26.5,0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+1.9>,<-22,C+1>,<-21.6,C+1.45>,<-22,C+1.9>
@@ -694,7 +778,7 @@ union {
             translate<-16.5,26.5,0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+7.9>,<-22,C+7>,<-21.6,C+7.45>,<-22,C+7.9>
@@ -751,7 +835,7 @@ union {
            finish { ambient .4 } 
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+4.9>,<-22,C+4>,<-21.6,C+4.45>,<-22,C+4.9>
@@ -761,7 +845,7 @@ union {
             translate<-16.5,15.5,0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+1.9>,<-22,C+1>,<-21.6,C+1.45>,<-22,C+1.9>
@@ -771,7 +855,7 @@ union {
             translate<-16.5,15.5,0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+7.9>,<-22,C+7>,<-21.6,C+7.45>,<-22,C+7.9>
@@ -828,7 +912,7 @@ union {
            finish { ambient .4 } 
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+4.9>,<-22,C+4>,<-21.6,C+4.45>,<-22,C+4.9>
@@ -838,7 +922,7 @@ union {
             translate<-16.5,15.5,0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+1.9>,<-22,C+1>,<-21.6,C+1.45>,<-22,C+1.9>
@@ -848,7 +932,7 @@ union {
             translate<-16.5,15.5,0>
         }
         prism{
-            4,
+            5,
             5.5,
             4,
             <-22,C+7.9>,<-22,C+7>,<-21.6,C+7.45>,<-22,C+7.9>

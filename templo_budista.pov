@@ -2,9 +2,9 @@
 #include "textures"
    
 camera{
-    location <0,0,-60>
+    //location <0,0,-60>
     //location <80,0,40>
-    //location <-80,0,40>
+    location <-80,0,20>
     //location <0,200,90>
     //location <0,0,150>
     look_at <0,0,40>
@@ -12,6 +12,7 @@ camera{
    
 light_source{
     <-50,50,-100>
+    //<-50,50,100>
     White
 }
 sky_sphere{
@@ -72,7 +73,7 @@ union {
             pigment {White}
         }
         box{
-            <-14.9,-9.9,0.5>,<14.9,9.9,49.9> 
+            <-14.9,-9.9,0.1>,<14.9,9.9,49.9> 
             finish { ambient .4 } 
             pigment {Black}
         }                        
@@ -89,8 +90,7 @@ union {
                 translate <(B+(B+5.6))/2,6>
                 pigment{ color Black transmit 0.5}
             }
-        #end
-        
+        #end     
         #for(B, -11.4, 5.8, 8.6)
             box{
                 <B,-9.8,0>,<B+5.6,-4,-0.5>
@@ -103,6 +103,60 @@ union {
                 pigment{ color Black transmit 0.5}
             }
         #end
+        
+        //buraco da janela - tras
+        #for(B, -11.4, 5.8, 8.6)
+            box{
+                <B,1.2,49.5>,<B+5.6,6,50>
+                texture{ pigment{ color Black}
+                   finish { ambient 0.9 phong 0.5}
+                } // end of texture
+            }
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,6>
+                pigment{ color Black transmit 0.5}
+            }
+        #end     
+        #for(B, -11.4, 5.8, 8.6)
+            box{
+                <B,-9.8,49.5>,<B+5.6,-4,50>
+                texture{ pigment{ color Black}
+                   finish { ambient 0.9 phong 0.5}
+                } // end of texture
+            }
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,-4>
+                pigment{ color Black transmit 0.5}
+            }
+        #end
+        
+        //buraco da janela - -x
+        #for(B, 3.6, 50, 8.6)
+            box{
+                <-15,1.2,B>,<-15,6,B+5.6>
+                texture{ pigment{ color Black}
+                   finish { ambient 0.9 phong 0.5}
+                } // end of texture
+            } 
+            sphere{ 0, 1 scale<0,1.75,2.8>
+                translate <-15,6,(B+(B+5.6))/2>
+                pigment{ color Black transmit 0.5}
+            }
+        #end     
+        #for(B, 3.6, 50, 8.6)
+            box{
+                <-15,-9.8,B>,<-15,-4,B+5.6>
+                texture{ pigment{ color Black}
+                   finish { ambient 0.9 phong 0.5}
+                } // end of texture
+            }
+            sphere{ 0, 1 scale<0,1.75,2.8>
+                translate <-15,-4,(B+(B+5.6))/2>
+                pigment{ color Black transmit 0.5}
+            }
+        #end
+        
+        
         
         
     }
@@ -124,10 +178,7 @@ union {
         box{
             <B,1.2,0>,<B+5.6,6,-0.5>
             texture{Glass3 }   
-        }
-        
-        
-        
+        }       
     #end
     #for(B, -11.4, 5.8, 8.6)
         difference{
@@ -141,18 +192,86 @@ union {
                 pigment{ color Black }
             }
         }
-        
-         
         box{
             <B,-9.8,0>,<B+5.6,-4,-0.5>
             texture{Glass3 }
         }
-        
     #end
-    /*sphere{ 0, 1 scale<2.8,1.75,0>
-        translate <-8.6,6>
-        pigment{ color Green transmit 0.5}
-    }*/
+    
+    //vidros - tras
+    #for(B, -11.4, 5.8, 8.6)
+        difference{
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,6,51>
+                pigment{ color Black }
+                texture{Glass3 }
+            } 
+            box{
+                <B,1.2,40>,<B+5.6,6,60>
+                pigment{ color Black }
+                
+            }
+        }
+        box{
+            <B,1.2,49.5>,<B+5.6,6,51>
+            texture{Glass3 }   
+        }       
+    #end
+    #for(B, -11.4, 5.8, 8.6)
+        difference{
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,-4,51>
+                pigment{ color Black }
+                texture{Glass3 }
+            }
+            box{
+                <B,-9.8,40>,<B+5.6,-4,60>
+                pigment{ color Black }
+            }
+        }
+        box{
+            <B,-9.8,49.5>,<B+5.6,-4,51>
+            texture{Glass3 }
+        }
+    #end
+    
+    //vidros - -x
+    #for(B, -11.4, 5.8, 8.6)
+        difference{
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,6,51>
+                pigment{ color Black }
+                texture{Glass3 }
+            } 
+            box{
+                <B,1.2,40>,<B+5.6,6,60>
+                pigment{ color Black }
+                
+            }
+        }
+        box{
+            <B,1.2,49.5>,<B+5.6,6,51>
+            texture{Glass3 }   
+        }       
+    #end
+    #for(B, -11.4, 5.8, 8.6)
+        difference{
+            sphere{ 0, 1 scale<2.8,1.75,0>
+                translate <(B+(B+5.6))/2,-4,51>
+                pigment{ color Black }
+                texture{Glass3 }
+            }
+            box{
+                <B,-9.8,40>,<B+5.6,-4,60>
+                pigment{ color Black }
+            }
+        }
+        box{
+            <B,-9.8,49.5>,<B+5.6,-4,51>
+            texture{Glass3 }
+        }
+    #end
+
     
     /*
     Barras Vermelhas - frente
