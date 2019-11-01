@@ -4,17 +4,19 @@
    
 camera{
     //location <0,0,-60>
+    //location <60,0,-60>
     //location <80,0,20>
-    location <-80,0,20>
+    location <80,0,20>
     //location <0,200,90>
     //location <0,0,150>
     look_at <0,0,20>
+    //look_at <0,0,0>
 }   
    
 light_source{
-    //<-50,50,-100>
+    <0,100,-100>
     //<-50,50,100>
-    <100,0,20>
+    //<100,0,20>
     White
 }
 sky_sphere{
